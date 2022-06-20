@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+
+<div>
+
+    <form action="/bookings/add" method="post">
+        <div>
+            <label>First Name</label>
+            <input type="text" name="guest_first_nm">
+        </div>
+        <div>
+            <label>Last Name</label>
+            <input type="text" name="guest_last_nm">
+        </div>
+        <div>
+            <label>Program</label>
+            <select name="program_id" id="program_id">
+                <% programs.forEach(program => { %>
+                    <option value="<%= program.id %>"> <%= program.title %>  </option>
+                <% }) %>
+            </select>
+        </div>
+        <div>
+            <label>Hotel</label>
+            <input type="number" name="hotel_id">
+        </div>
+        <div>
+            <label>Tour Company</label>
+            <input type="number" name="user_id">
+        </div>
+        <div>
+            <label>Group Size</label>
+            <input type="number" name="group_size">
+        </div>
+        <div>
+            <label>Arrival Date</label>
+            <input type="date" name="start_date">
+        </div>
+
+        <input type="submit" value="Add">
+
+
+    </form>
+</div>
+    
+</body>
+</html>

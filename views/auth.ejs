@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+    <% if(message.erroe) { %>
+        <p><%- message.error %></p>
+    <% } %>
+
+    <% if(message.success) { %>
+        <p><%- message.success %></p>
+    <% } %>
+
+    <nav class="py-4 px-20 bg-[#39a4ac] mb-12">
+        <a href="/">
+            <img class="w-[100px] mx-auto" src="https://cdn.discordapp.com/attachments/917063897889009744/986644057180766238/dc-logo.png">
+        </a>
+    </nav>
+    
+    <div class="">
+        <div class="bg-white flex max-h-screen mx-auto py-8 px-[200PX] rounded-lg">
+            
+            <div class="px-8 w-[70%] shadow-lg py-8">
+                <h1 class="text-[35px] mb-8">Login</h1>
+                <form action="/auth" method="post">
+                    <label for="username">Username</label>
+                    <div id class="rounded-lg bg-white p-2 mb-8 text-[#24326a] shadow-lg flex items-center">
+                        <i class="fa-solid fa-user mx-2"></i>
+                        <input id="username" class="w-full outline-none border-none rounded-lg bg-none py-2" type="text" name="username" placeholder="Enter Username" id="username"> <br>
+                    </div>
+                    <label for="password">Password</label>
+                    <div class="rounded-lg bg-white p-2 mb-8 text-[#24326a] shadow-lg flex items-center">
+                        <i class="fa-solid fa-lock mx-2 text-[#24326a]"></i>
+                        <input class="w-full outline-none border-none rounded-lg bg-none py-2" type="password" name="password" placeholder="Enter Password" id="password">
+                    </div>
+        
+                    <div class="mb-8">
+                        <button type="submit" class="bg-[#39A4AC] text-white px-8 py-2 rounded-lg shadow-[#24326a] shadow-sm">Login</button>
+                    </div>
+
+                    <p>become a member: <a href="" class="text-[#39A4AC] underline">Sign Up</a> </p>
+                </form>
+            </div>
+            <div class="overflow-hidden w-[800px]">
+                <!-- <h1 class="text-[35px] text-center">Welcome Back</h1> -->
+                <img class="object-cover" src="https://brawtaliving.com/wp-content/uploads/2019/03/Dolphin-Cove-natali.jpg">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

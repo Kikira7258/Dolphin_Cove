@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <nav class="flex justify-between mx-24 items-center py-2">
+        <ul class="flex gap-4">
+            <li class="text-center"><a href="" class="w-[35px] h-[35px] inline-block rounded-full bg-slate-300 hover:bg-blue-800"><i class="fa-brands fa-facebook-f text-[25px] text-white mt-[5px]"></i>
+            <li class="text-center"><a href="" class="w-[35px] h-[35px] inline-block rounded-full bg-slate-300 hover:bg-blue-400"><i class="fa-brands fa-twitter text-[25px] text-white mt-[5px]"></i></a></li>
+            <li class="text-center"><a href="" class="w-[35px] h-[35px] inline-block rounded-full bg-slate-300 hover:bg-red-900"><i class="fa-brands fa-instagram text-[25px] text-white mt-[5px]"></i></a></li>
+            <li class="text-center"><a href="" class="w-[35px] h-[35px] inline-block rounded-full bg-slate-300 hover:bg-red-600"><i class="fa-brands fa-youtube text-[25px] text-white mt-[5px]"></i></a></li>
+        </ul>
+    
+        <div>
+            <img class="w-[160px]" src="http://blog.dolphincoveja.com/wp-content/uploads/2020/05/Dolphin-Cove-logo.png">
+        </div>
+    
+        <div>
+            <a href="/auth" class="text-[30px]">Login</a>
+        </div>
+    </nav>
+
+    <div>
+        <div class="mx-auto">
+            <ul class="flex bg-[#39a4ac] items-center">
+                <li class="text-white ml-12 border-r-2">PARKS <i class="fa-solid fa-angle-down ml-12 pr-2"></i></li>
+                <li class="text-white ml-12 border-r-2">INFORMATION <i class="fa-solid fa-angle-down ml-12 pr-2"></i></li>
+                <li class="text-white mx-12">NEWS</li>
+                <li class="text-yellow-400 bg-blue-800 py-6 px-12">DEALS</li>
+            </ul>
+        </div>
+
+        <a href="" class="flex bg-[#095f65] text-white items-center text-center"><i class="fa-solid fa-shield-heart mr-2"></i></i><p>Dolphin Cares: Integral Hygiene and safety protocols. Read more!</p></a>
+
+        <div>
+            <img src="https://www.dtraveller.com/promotions/imagesDD/dolphincoveja-banner.jpg?v=1">
+        </div>
+    </div>
+
+    <div class="bg-[#24326a] text-white py-4 text-center">
+        <h2 class="text-[40px]">Welcome to Dolphin Cove Jamaica</h2>
+        <p><i>Part of the Dolphin Discovery Group, the largest dolphin company in the world</i></p>
+    </div>
+
+    <div>
+        <p class="my-4 text-center mx-24 text-[20px] text-[#665]">Did you know that <b>swimming with dolphins</b> is considered one of the <b>top 10 bucket list</b> items? When you come to <b>Dolphin Cove Jamaica</b> you not only get a chance to live this dream; you have the opportunity to knock off a few more, like ride a camel and interact with stingrays. Here a place where you come for the day but remember for a lifetime.</p>
+
+        <p class="text-center mx-24 text-[20px] text-[#665]">One of the many things that make <b>Dolphin Cove Jamaica</b> special is that you can live the experience of <b>with dolphins </b>in the natural Caribbean Sea. Here you have the opportunity to enjoy the company of different fish, rays, and other forms of natural sea life. <b>Dolphin Cove Jamaica</b> is the place to spend the day enjoying lots of fun activities. There is truly something for everyone!</p>
+
+        <p class="my-4 text-center mx-24 text-[20px] text-[#665]"><b>Dolphin Cove Jamaica</b> is full of <b>natural wonders and beauty</b> you gotta see for yourself! In <b>Dolphin Cove Ocho Rios</b> you’ll enjoy strolling around in the Jungle Trail, where you will notice many different wild animals, plants, and trees. At <b>Dolphin Cove Jamaica</b> we respect the environment of all the species, here you will live the most natural experience you’ve ever had.</p>
+    </div>
+
+
+        
+    <!-- >> Programs || Database >> -->
+    <div class="mx-24">
+    <h2 class="text-[#24326a] text-[35px] mt-20 text-center">DISCOVER OUR SWIM WITH DOLPHINS PROGRAMS</h2>
+    <hr class="bg-yellow-500 mb-12 h-[2px]">
+
+    <% if(programs.length) { for(var i=0; i < programs.length; i++) { %>
+    <div class="">
+        <div class="w-[300px] h-[300px] mr-8 overflow-hidden">
+            <img src="<%= programs[i].img_url %>" class="object-cover">
+        </div>
+        <div>
+            <p><%= programs[i].title %></p>
+            <p><%= programs[i].description %></p>
+            <p>$<%= programs[i].cost %>USD</p>
+            <button><a href="/bookings/add">Booked now</a></button>
+        </div>
+    </div>
+    <% }} %>
+    </div>
+    
+</body>
+</html>

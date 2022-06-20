@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <nav class="py-4 px-8 flex justify-between">
+        <a href="/"><img class="w-[100px]" src="http://blog.dolphincoveja.com/wp-content/uploads/2020/05/Dolphin-Cove-logo.png"></a>
+
+        <div class="flex items-center">
+            <% if (my_session.isAuthenticated == true) { %>
+                <img class="w-[30px] h-[30px] rounded-full" src="<%= my_session.profile_img %> ">
+            <% } %>
+            
+            <p class="ml-2 mr-8">
+                <% if (my_session.isAuthenticated == true) { %>
+                 <%= my_session.username %>
+                <% } %>
+            </p>
+            <button><a href="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></button>
+        </div>
+    </nav>
+    
+</body>
+</html>

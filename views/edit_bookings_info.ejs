@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Edit || Update -->
+<div>
+    <form method="post" action="/bookings/update/<%=bookings_id%>">
+        <input type="number" name="user_id" value="<%= user_id %>">
+        <input type="number" name="program_id" value="<%= program_id %>">
+        <input type="number" name="hotel_id" value="<%= hotel_id %>">
+        <input type="number" name="voucher_number" value="<%= voucher_number %>">
+        <input type="number" name="group_size" value="<%= group_size %>">
+        <input type="text" name="guest_first_nm" value="<%= guest_first_nm %>">
+        <input type="text" name="guest_last_nm" value="<%= guest_last_nm %>">
+        <input type="text" name="booked_date" value="<%= booked_date %>">
+        <input type="text" name="start_date" value="<%= start_date %>">
+
+        <button type="submit" class="">Submit</button>
+    </form>
+</div>
+    
+</body>
+</html>

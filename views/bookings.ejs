@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+    <%- include('partials/banner') %>
+    <%- include('partials/side_nav') %>  
+    <%- include('partials/bookings_banner') %>
+
+
+    <div class="ml-[220px] mt-8">
+        <table class="mx-auto">
+            <thead>
+                <tr class="border-2 border-black">
+                    <th class="border-2 border-black py-2 px-4">Guest Name</th>
+                    <th class="border-2 border-black py-2 px-4">Hotel</th>
+                    <th class="border-2 border-black py-2 px-4">Tour Company</th>
+                    <th class="border-2 border-black py-2 px-4">Group Size</th>
+                    <th class="border-2 border-black py-2 px-4">Program</th>
+                    <th class="border-2 border-black py-2 px-4">Voucher Num</th>
+                    <th class="border-2 border-black py-2 px-4">Cost</th>
+                    <th class="border-2 border-black py-2 px-4">Booked Date</th>
+                    <th class="border-2 border-black py-2 px-4">Start Date</th>
+                    <th class="border-2 border-black py-2 px-4">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if(details.length) { for(var i=0; i < details.length; i++ ) { %>
+                <tr>
+                    <td class="border py-2 px-4"><%= details[i].guest_first_nm %> <%= details[i].guest_last_nm %></td>
+                    <td class="border py-2 px-4"><%= details[i].hotel_nm %></td>
+                    <td class="border py-2 px-4"><%= details[i].comp_name %></td>
+                    <td class="border py-2 px-4"><%= details[i].group_size %></td>
+                    <td class="border py-2 px-4"><%= details[i].title %></td>
+                    <td class="border py-2 px-4"><%= details[i].voucher_number %></td>
+       
+                    <td class="border py-2 px-4"><%= details[i].total_amount %></td>
+                    <td class="border py-2 px-4"><%= new Date(details[i].booked_date).toDateString() %></td>
+                    <td class="border py-2 px-4"><%= new Date(details[i].start_date).toDateString() %></td>
+                    <td class="border py-2 px-4">
+                        <a href="/bookings/edit/<%=details[i].bookings_id%>"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="/bookings/delete/<%= details[i].bookings_id%>"><i class="fa-solid fa-ban"></i></a>
+                    </td>
+                </tr>
+                <% }} else { %>
+                    <tr>
+                        <td>No records</td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,26 @@
+
+<!-- >> Programs || Database >> -->
+<div class="mx-24 ml-[300px]">
+    <div>
+        <h2 class="text-[#24326a] text-[35px] mt-8 text-center">DISCOVER OUR SWIM WITH DOLPHINS PROGRAMS</h2>
+        <a href=""><i class="fa-solid fa-plus text-[25px] mt-[5px]"></i></a>
+    </div>
+    <hr class="bg-yellow-500 mb-12 h-[2px]">
+
+    <% if(item.length) { for(var i=0; i < item.length; i++) { %>
+    <div class="grid grid-cols-3">
+        <div class="w-[300px] h-[300px] mr-8 overflow-hidden">
+            <img src="<%= item[i].img_url %>" class="object-cover">
+        </div>
+        <div>
+            <p><%= item[i].title %></p>
+            <p><%= item[i].description %></p>
+            <p>$<%= item[i].cost %>USD</p>
+            <div>
+                <a href=""><i class="fa-solid fa-ban"></i></a>
+                <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+            </div>
+        </div>
+    </div>
+    <% }} %>
+    </div>

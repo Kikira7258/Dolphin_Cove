@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <%- include('partials/banner') %>
+    <%- include('partials/side_nav') %>  
+
+
+    <div class="ml-[300px]">
+        <form method="get" action="/search">
+            <div class="py-2 px-4 border-black border-[2px] w-[300px] rounded-lg flex justify-between">
+                <input type="text" name="search" placeholder="Seach Reservation" class="outline-none border-none w-[100%]">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass pl-2"></i></button>
+            </div>
+        </form>
+
+        <div>
+            <% if (records.length > 0) { %>
+                <% records.forEach(rec => { %>
+                    
+                    <div>
+                        <h1><%= rec.title %> </h1>
+                        <p><%= rec.guest_first_nm %> <%= rec.guest_last_nm %> </p>
+                        <p><%= rec.group_size %> </p>
+                        <p><%= rec.start_date.toDateString() %> </p>
+                        <p><%= rec.booked_date.toDateString() %> </p>
+                        <p><%= rec.total_amount%> </p>
+                    </div>
+                <% }) %>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>
